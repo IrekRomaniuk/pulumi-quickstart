@@ -11,7 +11,8 @@ account = storage.Account('netsta',
                           # The location for the storage account will be derived automatically from the resource group.
                           resource_group_name=resource_group.name,
                           account_tier='Standard',
-                          account_replication_type='LRS')
+                          account_replication_type='LRS',
+                          tags={"Environment": "Dev"})
 
 # Export the connection string for the storage account
 pulumi.export('connection_string', account.primary_connection_string)
